@@ -1,0 +1,24 @@
+http://www.usnews.com/news/articles/2016-06-10/donald-trumps-not-going-to-become-presidential-and-it-could-doom-the-gop
+{
+pusilanimous
+timid
+1/1
+stalwart
+reliable
+1/1
+mien
+appearance
+1/1
+gravitas
+dignity
+1/1
+portentous
+warning
+1/1
+incumbent
+currently holding office
+1/1
+pugnacious
+aggressive
+1/1
+}
