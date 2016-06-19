@@ -1,4 +1,5 @@
 #include <map>
+#include <random>
 #include <string>
 #include <vector>
 #include <fstream>
@@ -54,6 +55,14 @@ auto get_option(const vector<command>& options) -> vector<command>::size_type
 void run_command(const vector<command>& commands)
 {
 	commands[get_option(commands)].action();
+}
+
+template<typename T>
+void shuffle_data(T& cont)
+{
+	random_device rd;
+	mt19937 g(rd());
+	shuffle(cont.begin(), cont.end(), g);
 }
 
 struct word
@@ -199,7 +208,7 @@ private:
 		auto res = 0;
 		auto wrong_answers = vector<word>{};
 
-		for_each(words.begin(), words.end(), bind(&word_manager::quiz_word, this, _1, ref(res), wrong_answers));
+		for_each(words.begin(), words.end(), bind(&word_manager::quiz_word, this, _1, ref(res), ref(wrong_answers)));
 
 		cout << "You got " << res << "/" << words.size() << " correct.\n";
 
@@ -212,6 +221,8 @@ private:
 		auto round = 0;
 
 		auto cur_words = words;
+
+		shuffle_data(cur_words);
 
 		while (!cur_words.empty())
 		{
