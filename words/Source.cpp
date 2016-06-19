@@ -254,9 +254,12 @@ private:
 
 		while (!cur_words.empty())
 		{
-			system("cls");
+			cout << "\nPress enter to start round " << ++round << ": ";
 
-			cout << "Round " << ++round << "\n";
+			string temp;
+			getline(cin, temp);
+
+			system("cls");
 
 			cur_words = quiz_once(cur_words);
 		}
