@@ -19,7 +19,7 @@ struct command
 	function<void(void)> action;
 };
 
-auto get_option(const vector<command>& options) -> vector<command>::size_type
+vector<command>::size_type get_option(const vector<command>& options)
 {
 	const auto wrong_answer = options.size() + 1;
 	auto res = wrong_answer;

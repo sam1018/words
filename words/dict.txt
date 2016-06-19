@@ -22,3 +22,36 @@ pugnacious
 aggressive
 3/4
 }
+https://www.washingtonpost.com/entertainment/museums/a-microsoft-billionaire-gives-the-public-a-rare-view-of-his-art/2016/02/11/ffd4f0d8-cf5f-11e5-88cd-753e80cd29ad_story.html
+{
+ostensibly
+apparently
+0/0
+idiosyncratic
+peculiar or individual
+0/0
+cornucopia
+abundance
+0/0
+inoculation
+immunization
+0/0
+sublime
+majestic
+0/0
+assimilate
+take in (information, ideas or culture) and understand fully
+0/0
+vantage
+a place or position affording good view of something
+0/0
+surreptitious
+secret
+0/0
+jejune
+naive, simplistic and superficial
+0/0
+factitious
+fake
+0/0
+}
