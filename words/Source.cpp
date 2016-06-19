@@ -6,6 +6,7 @@
 #include <sstream>
 #include <iomanip>
 #include <iostream>
+#include <iterator>
 #include <algorithm>
 #include <functional>
 
@@ -64,6 +65,19 @@ void shuffle_data(T& cont)
 	mt19937 g(rd());
 	shuffle(cont.begin(), cont.end(), g);
 }
+
+template <typename T>
+ostream& operator<< (ostream& out, const vector<T>& v)
+{
+	if (!v.empty())
+	{
+		out << '[';
+		copy(v.begin(), v.end(), ostream_iterator<T>(out, ", "));
+		out << "\b\b]";
+	}
+	return out;
+}
+
 
 struct word
 {
@@ -164,6 +178,22 @@ word read_word_input(const string& link)
 	return res;
 }
 
+void print_wrong_answers(const vector<word>& wrong_answers)
+{
+	if (!wrong_answers.empty())
+	{
+		cout << "You got the following " << wrong_answers.size() << " words wrong:\n";
+
+		cout << '[';
+
+		for_each(wrong_answers.begin(), wrong_answers.end(), [](auto& x) {
+			cout << x.s << ", ";
+		});
+
+		cout << "\b\b]";
+	}
+}
+
 class word_manager
 {
 	// words will maintain the following properties:
@@ -179,7 +209,7 @@ private:
 		});
 	}
 
-	void quiz_word(const word& x, int& res, vector<word>& wrong_answers)
+	void quiz_word(const word& x, vector<word>& wrong_answers)
 	{
 		cout << "\nWhat is the meaning of the word \"" << x.s << "\": ";
 		auto s = string{};
@@ -192,25 +222,23 @@ private:
 		it->total_quiz++;
 
 		if (s == "y")
-		{
-			res += 1;
 			it->got_right++;
-		}
 		else
-		{
 			wrong_answers.push_back(x);
-		}
 	}
 	
 	// each word asked once
 	vector<word> quiz_once(const vector<word>& words)
 	{
-		auto res = 0;
 		auto wrong_answers = vector<word>{};
 
-		for_each(words.begin(), words.end(), bind(&word_manager::quiz_word, this, _1, ref(res), ref(wrong_answers)));
+		for_each(words.begin(), words.end(), bind(&word_manager::quiz_word, this, _1, ref(wrong_answers)));
 
-		cout << "You got " << res << "/" << words.size() << " correct.\n";
+		cout << "\nFinished round.\n";
+
+		cout << "You got " << (words.size() - wrong_answers.size()) << "/" << words.size() << " correct.\n";
+
+		print_wrong_answers(wrong_answers);
 
 		return wrong_answers;
 	}
