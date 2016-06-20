@@ -23,6 +23,7 @@ struct word
 	string meaning;
 	int got_right = 0;
 	int total_quiz = 0;
+	bool learned = false;
 
 	explicit word(const string& _link) :
 		link(_link)
@@ -48,7 +49,7 @@ word read_word(ifstream& f, const string& link)
 
 	auto ch = char{};
 
-	ss >> w.got_right >> ch >> w.total_quiz;
+	ss >> w.got_right >> ch >> w.total_quiz >> ch >> w.learned;
 
 	return w;
 }
@@ -57,7 +58,7 @@ void write_word(ofstream& f, const word& w)
 {
 	f << w.s << "\n";
 	f << w.meaning << "\n";
-	f << w.got_right << "/" << w.total_quiz << "\n";
+	f << w.got_right << "/" << w.total_quiz << "/" << w.learned << "\n";
 }
 
 vector<word> read_words_by_link(ifstream& f, const string& link)
@@ -129,6 +130,22 @@ void print_wrong_answers(const vector<word>& wrong_answers)
 	}
 }
 
+struct filter
+{
+	vector<word>& cur_words;
+	function<bool(const word& x)> f;
+
+	filter(vector<word>& _cur_words, function<bool(const word& x)> _f) :
+		cur_words(_cur_words),
+		f(_f)
+	{}
+
+	void operator()()
+	{
+		cur_words.erase(remove_if(cur_words.begin(), cur_words.end(), f), cur_words.end());
+	}
+};
+
 class word_manager
 {
 	// words will maintain the following properties:
@@ -144,7 +161,7 @@ private:
 		});
 	}
 
-	void quiz_word(const word& x, vector<word>& wrong_answers)
+	void quiz_word(const word& x, function<void(vector<word>::iterator, bool)> callback_on_answer)
 	{
 		auto s = string{};
 		get_user_input(stringer("\nWhat is the meaning of the word \"", x.s, "\": "), s);
@@ -153,13 +170,7 @@ private:
 
 		get_user_input("Was your answer correct (y/n): ", s, { "y", "n" });
 
-		auto it = get_word(x.s);
-		it->total_quiz++;
-
-		if (s == "y")
-			it->got_right++;
-		else
-			wrong_answers.push_back(x);
+		callback_on_answer(get_word(x.s), s == "y");
 	}
 	
 	// each word asked once
@@ -167,7 +178,15 @@ private:
 	{
 		auto wrong_answers = vector<word>{};
 
-		for_each(words.begin(), words.end(), bind(&word_manager::quiz_word, this, _1, ref(wrong_answers)));
+		auto f = [&wrong_answers](vector<word>::iterator word_it, bool res) {
+			word_it->total_quiz++;
+			if (res)
+				word_it->got_right++;
+			else
+				wrong_answers.push_back(*word_it);
+		};
+
+		for_each(words.begin(), words.end(), bind(&word_manager::quiz_word, this, _1, f));
 
 		cout << "\nFinished round.\n";
 
@@ -185,16 +204,10 @@ private:
 
 		auto cur_words = words;
 
-		auto new_words_only = [&cur_words]() {
-			cur_words.erase(
-				remove_if(cur_words.begin(), cur_words.end(), [](auto& x) { return x.total_quiz != 0; }),
-				cur_words.end()
-			);
-		};
-
 		run_command({
-			{"All Words", []() {}},
-			{"New Words", new_words_only }
+			{ "All Words", []() {} },
+			{ "New Words", filter(cur_words, [](auto& x) { return x.total_quiz != 0; }) },
+			{ "Words Not Marked Learned", filter(cur_words, [](auto& x) { return x.learned; }) }
 		});
 
 		shuffle_data(cur_words);
@@ -271,11 +284,25 @@ public:
 	{
 		cout << "\n";
 
-		for_each(words.begin(), words.end(), [](auto& x) {
+		auto cur_words = words;
+
+		//run_command({
+		//	{"All Words", []() {}},
+		//	{"Words Marked Learned", bind(filter, [](const word& x) {return !x.learned; })},
+		//	{"Words Not Marked Learned", bind(filter, [](const word& x) {return x.learned; }) }
+		//});
+
+		run_command({
+			{"All Words", []() {}},
+			{"Words Marked Learned", filter(cur_words, [](const word& x) {return !x.learned; })},
+			{"Words Not Marked Learned", filter(cur_words, [](const word& x) {return x.learned; }) }
+		});
+
+		for_each(cur_words.begin(), cur_words.end(), [](auto& x) {
 			cout << "Word: " << left << setw(15) << x.s << " Meaning: " << x.meaning << "\n";
 		});
 
-		cout << "\n";
+		cout << "\nTotal Words: " << cur_words.size() << "\n\n";
 	}
 
 	void quiz()
@@ -283,9 +310,30 @@ public:
 		cout << "\n";
 
 		run_command({
-			{"One word once", bind(&word_manager::quiz_once, this, cref(words))},
-			{"Until you get all of them correct", bind(&word_manager::quiz_all_correct, this)}
+			{"One Word Once", bind(&word_manager::quiz_once, this, cref(words))},
+			{"Until You Get All Of Them Correct", bind(&word_manager::quiz_all_correct, this)}
 		});
+	}
+
+	void mark_learned_words()
+	{
+		auto cur_words = words;
+
+		cur_words.erase(remove_if(cur_words.begin(), cur_words.end(), [](auto& x) {
+			return x.learned;
+		}), cur_words.end());
+
+		auto f = [](vector<word>::iterator word_it, bool res) {
+			if (res)
+			{
+				string s;
+				get_user_input("Mark word learned (y/n): ", s, { "y", "n" });
+				if (s == "y")
+					word_it->learned = true;
+			}
+		};
+
+		for_each(cur_words.begin(), cur_words.end(), bind(&word_manager::quiz_word, this, _1, f));
 	}
 };
 
@@ -300,6 +348,7 @@ int main()
 			{"Insert", bind(&word_manager::insert, &words)},
 			{"Print", bind(&word_manager::print, &words)},
 			{"Quiz", bind(&word_manager::quiz, &words)},
+			{"Mark Learned Words", bind(&word_manager::mark_learned_words, &words)},
 			{"Exit", [&end]() {end = true; }}
 		});
 	}
