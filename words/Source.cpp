@@ -1,3 +1,6 @@
+#include "routines.h"
+#include "console_helper.h"
+
 #include <map>
 #include <random>
 #include <string>
@@ -12,72 +15,6 @@
 
 using namespace std;
 using namespace std::placeholders;
-
-struct command
-{
-	string command_name;
-	function<void(void)> action;
-};
-
-vector<command>::size_type get_option(const vector<command>& options)
-{
-	const auto wrong_answer = options.size() + 1;
-	auto res = wrong_answer;
-
-	while (res == wrong_answer)
-	{
-		auto count = 0;
-
-		for_each(options.begin(), options.end(), [&count](auto& x) {
-			cout << ++count << ". " << x.command_name << "\n";
-		});
-
-		cout << "Give your choice: ";
-
-		auto temp = string{};
-		getline(cin, temp);
-
-		try
-		{
-			res = stoi(temp);
-			if (res <= 0 || res > options.size())
-				throw invalid_argument("");
-		}
-		catch (...)
-		{
-			res = wrong_answer;
-			cout << "Invalid option. Please choose a valid option.\n";
-		}
-	}
-
-	return res - 1;
-}
-
-void run_command(const vector<command>& commands)
-{
-	commands[get_option(commands)].action();
-}
-
-template<typename T>
-void shuffle_data(T& cont)
-{
-	random_device rd;
-	mt19937 g(rd());
-	shuffle(cont.begin(), cont.end(), g);
-}
-
-template <typename T>
-ostream& operator<< (ostream& out, const vector<T>& v)
-{
-	if (!v.empty())
-	{
-		out << '[';
-		copy(v.begin(), v.end(), ostream_iterator<T>(out, ", "));
-		out << "\b\b]";
-	}
-	return out;
-}
-
 
 struct word
 {
@@ -166,14 +103,12 @@ word read_word_input(const string& link)
 {
 	word res{ link };
 
-	cout << "Word (0 to end): ";
-	getline(cin, res.s);
+	get_user_input("Word (0 to end): ", res.s);
 
 	if (res.s == "0")
 		throw invalid_argument("");
 
-	cout << "Meaning: ";
-	getline(cin, res.meaning);
+	get_user_input("Meaning: ", res.meaning);
 
 	return res;
 }
@@ -211,12 +146,12 @@ private:
 
 	void quiz_word(const word& x, vector<word>& wrong_answers)
 	{
-		cout << "\nWhat is the meaning of the word \"" << x.s << "\": ";
 		auto s = string{};
-		getline(cin, s);
+		get_user_input(stringer("\nWhat is the meaning of the word \"", x.s, "\": "), s);
+
 		cout << "Compare your answer with the correct answer: " << x.meaning << "\n";
-		cout << "Was your answer correct (y/n): ";
-		getline(cin, s);
+
+		get_user_input("Was your answer correct (y/n): ", s, { "y", "n" });
 
 		auto it = get_word(x.s);
 		it->total_quiz++;
@@ -250,14 +185,23 @@ private:
 
 		auto cur_words = words;
 
+		auto new_words_only = [&cur_words]() {
+			cur_words.erase(
+				remove_if(cur_words.begin(), cur_words.end(), [](auto& x) { return x.total_quiz != 0; }),
+				cur_words.end()
+			);
+		};
+
+		run_command({
+			{"All Words", []() {}},
+			{"New Words", new_words_only }
+		});
+
 		shuffle_data(cur_words);
 
 		while (!cur_words.empty())
 		{
-			cout << "\nPress enter to start round " << ++round << ": ";
-
-			string temp;
-			getline(cin, temp);
+			get_user_input(stringer("\nPress enter to start round ", ++round, ": "));
 
 			system("cls");
 
@@ -301,8 +245,8 @@ public:
 	void insert()
 	{
 		auto link = string{};
-		cout << "Link: ";
-		getline(cin, link);
+
+		get_user_input("Link: ", link);
 
 		while (1)
 		{

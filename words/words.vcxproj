@@ -151,6 +151,10 @@
   <ItemGroup>
     <Text Include="dict.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="console_helper.h" />
+    <ClInclude Include="routines.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

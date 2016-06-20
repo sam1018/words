@@ -22,4 +22,12 @@
   <ItemGroup>
     <Text Include="dict.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="routines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="console_helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

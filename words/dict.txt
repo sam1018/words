@@ -35,13 +35,13 @@ http://www.usnews.com/opinion/articles/2016-05-17/even-if-donald-trump-were-a-sa
 {
 inundate
 overwhelm; flood
-0/0
+1/2
 dilettante
 ameteur
-0/0
+1/1
 silo
 isolate (one system, process, department, etc.) from others
-0/0
+1/1
 }
 https://www.washingtonpost.com/entertainment/museums/a-microsoft-billionaire-gives-the-public-a-rare-view-of-his-art/2016/02/11/ffd4f0d8-cf5f-11e5-88cd-753e80cd29ad_story.html
 {
