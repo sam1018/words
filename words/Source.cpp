@@ -286,12 +286,6 @@ public:
 
 		auto cur_words = words;
 
-		//run_command({
-		//	{"All Words", []() {}},
-		//	{"Words Marked Learned", bind(filter, [](const word& x) {return !x.learned; })},
-		//	{"Words Not Marked Learned", bind(filter, [](const word& x) {return x.learned; }) }
-		//});
-
 		run_command({
 			{"All Words", []() {}},
 			{"Words Marked Learned", filter(cur_words, [](const word& x) {return !x.learned; })},
