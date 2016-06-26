@@ -18,9 +18,12 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="dict.txt" />
+    <ClCompile Include="word_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="console_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="routines.h">
@@ -29,5 +32,11 @@
     <ClInclude Include="console_helper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="word_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="dict.xml" />
   </ItemGroup>
 </Project>
