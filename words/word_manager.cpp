@@ -96,6 +96,12 @@ struct filter
 	}
 };
 
+class end_quiz : public exception
+{
+public:
+	end_quiz() {}
+};
+
 class word_manager::impl
 {
 private:
@@ -124,9 +130,11 @@ public:
 
 private:
 	vector<word_data>::iterator get_word(const string& name);
-	void quiz_word(const word_data& x, function<void(vector<word_data>::iterator, bool)> callback_on_answer);
 	vector<word_data> quiz_once(const vector<word_data>& words);
 	void quiz_all_correct();
+
+	// handle end_quiz exception for end quiz event
+	void quiz_word(const word_data& x, function<void(vector<word_data>::iterator, bool)> callback_on_answer);
 };
 
 void word_manager::impl::insert()
@@ -207,7 +215,14 @@ void word_manager::impl::mark_learned_words()
 		}
 	};
 
-	for_each(cur_words().begin(), cur_words().end(), bind(&word_manager::impl::quiz_word, this, std::placeholders::_1, f));
+	try
+	{
+		for_each(cur_words().begin(), cur_words().end(), bind(&word_manager::impl::quiz_word, this, std::placeholders::_1, f));
+	}
+	catch (end_quiz&)
+	{
+		// quiz finished on user request... no action required
+	}
 }
 
 vector<word_data>::iterator word_manager::impl::get_word(const string& name)
@@ -220,7 +235,10 @@ vector<word_data>::iterator word_manager::impl::get_word(const string& name)
 void word_manager::impl::quiz_word(const word_data& x, function<void(vector<word_data>::iterator, bool)> callback_on_answer)
 {
 	auto s = string{};
-	get_user_input(stringer("\nWhat is the meaning of the word \"", x.word, "\": "), s);
+	get_user_input(stringer("\nWhat is the meaning of the word \"", x.word, "\" (0 to end quiz): "), s);
+
+	if (s == "0")
+		throw end_quiz();
 
 	cout << "Compare your answer with the correct answer: " << x.meaning << "\n";
 
@@ -241,7 +259,14 @@ vector<word_data> word_manager::impl::quiz_once(const vector<word_data>& words)
 			wrong_answers.push_back(*word_it);
 	};
 
-	for_each(words.begin(), words.end(), bind(&word_manager::impl::quiz_word, this, std::placeholders::_1, f));
+	try
+	{
+		for_each(words.begin(), words.end(), bind(&word_manager::impl::quiz_word, this, std::placeholders::_1, f));
+	}
+	catch (end_quiz&)
+	{
+		// quiz finished on user request... no action required
+	}
 
 	cout << "\nFinished round.\n";
 
