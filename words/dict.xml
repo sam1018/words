@@ -235,7 +235,8 @@
     <word_data>
         <word>leeway</word>
         <links>https://www.washingtonpost.com/politics/courts_law/supreme-court-upholds-lethal-injection-procedure/2015/06/29/2b5cee6e-1b3c-11e5-93b7-5eddc056ad8a_story.html</links>
-        <meaning>freedom</meaning>
+        <links>http://www.nytimes.com/2016/07/08/nyregion/peter-powers-mayor-giulianis-steady-right-hand-dies-at-72.html?_r=0</links>
+        <meaning>freedom; freedom</meaning>
         <got_right>2</got_right>
         <total_quiz>2</total_quiz>
         <learned>false</learned>
@@ -286,6 +287,166 @@
         <meaning>the study of the punishment of crime and prison management</meaning>
         <got_right>2</got_right>
         <total_quiz>2</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>pyrrhic</word>
+        <links>http://www.history.com/news/history-lists/5-famous-pyrrhic-victories</links>
+        <meaning>victory achieved at a too great cost</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>rife</word>
+        <links>http://www.history.com/news/history-lists/5-famous-pyrrhic-victories</links>
+        <meaning>widespread</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>resent</word>
+        <links>http://www.history.com/news/history-lists/5-famous-pyrrhic-victories</links>
+        <meaning>grudge; indignation</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>plummet</word>
+        <links>http://www.history.com/news/history-lists/5-famous-pyrrhic-victories</links>
+        <meaning>drop; plunge; descend</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>zenith</word>
+        <links>http://www.history.com/news/history-lists/5-famous-pyrrhic-victories</links>
+        <meaning>high point</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>spate</word>
+        <links>https://www.washingtonpost.com/national/the-question-in-dallas-why-here/2016/07/09/5e81a0fa-4548-11e6-88d0-6adee48be8bc_story.html</links>
+        <meaning>series</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>devolve</word>
+        <links>https://www.washingtonpost.com/national/the-question-in-dallas-why-here/2016/07/09/5e81a0fa-4548-11e6-88d0-6adee48be8bc_story.html</links>
+        <meaning>worsen; delegate</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>neophyte</word>
+        <links>http://www.nytimes.com/2016/07/08/nyregion/peter-powers-mayor-giulianis-steady-right-hand-dies-at-72.html?_r=0</links>
+        <meaning>novice</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>rapport</word>
+        <links>http://www.nytimes.com/2016/07/08/nyregion/peter-powers-mayor-giulianis-steady-right-hand-dies-at-72.html?_r=0</links>
+        <meaning>understanding</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>renege</word>
+        <links>http://www.nytimes.com/2016/07/08/nyregion/peter-powers-mayor-giulianis-steady-right-hand-dies-at-72.html?_r=0</links>
+        <meaning>back out of</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>dispel</word>
+        <links>http://www.nytimes.com/2016/07/08/nyregion/peter-powers-mayor-giulianis-steady-right-hand-dies-at-72.html?_r=0</links>
+        <meaning>banish</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>bona fide</word>
+        <links>http://www.nytimes.com/2016/07/08/nyregion/peter-powers-mayor-giulianis-steady-right-hand-dies-at-72.html?_r=0</links>
+        <meaning>sincerely</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>chronicle</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>record</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>mores</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>customs</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>enshrine</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>preserve</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>fervor</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>passion</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>ascetic</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>self-denying</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>quotidian</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>daily</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>chic</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>stylish</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>preen</word>
+        <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
+        <meaning>congratulate or pride oneself</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
         <learned>false</learned>
     </word_data>
 </word_container>
