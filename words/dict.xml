@@ -409,4 +409,12 @@
         <total_quiz>4</total_quiz>
         <learned>false</learned>
     </word_data>
+    <word_data>
+        <word>fete</word>
+        <links>http://www.theverge.com/2016/8/15/12484418/larry-wilmore-the-nightly-show-canceled-comedy-central</links>
+        <meaning>honor or entertain lavishly</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
 </word_container>
