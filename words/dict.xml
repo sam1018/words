@@ -417,4 +417,44 @@
         <total_quiz>0</total_quiz>
         <learned>false</learned>
     </word_data>
+    <word_data>
+        <word>meander</word>
+        <links>http://www.latimes.com/entertainment/music/la-et-ms-mia-aim-review-20160909-snap-story.html</links>
+        <meaning>wander at random</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>esoteric</word>
+        <links>http://www.latimes.com/entertainment/music/la-et-ms-mia-aim-review-20160909-snap-story.html</links>
+        <meaning>obscure</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>fray</word>
+        <links>http://www.latimes.com/entertainment/music/la-et-ms-mia-aim-review-20160909-snap-story.html</links>
+        <meaning>strain</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>palatable</word>
+        <links>http://www.latimes.com/entertainment/music/la-et-ms-mia-aim-review-20160909-snap-story.html</links>
+        <meaning>tasty</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>belie</word>
+        <links>http://www.latimes.com/entertainment/music/la-et-ms-mia-aim-review-20160909-snap-story.html</links>
+        <meaning>contradict</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
 </word_container>
