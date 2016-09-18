@@ -148,6 +148,11 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>echo Copying $(OutDir)$(TargetName)$(TargetExt) to $(ProjectDir)
+copy /Y /B $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)
+echo Done</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="console_helper.cpp" />
