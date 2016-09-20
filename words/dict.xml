@@ -396,7 +396,8 @@
     <word_data>
         <word>quotidian</word>
         <links>https://www.washingtonpost.com/news/arts-and-entertainment/wp/2016/06/26/what-bill-cunningham-taught-us-about-ethical-journalism/</links>
-        <meaning>daily</meaning>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>daily; daily</meaning>
         <got_right>2</got_right>
         <total_quiz>6</total_quiz>
         <learned>false</learned>
@@ -460,7 +461,8 @@
     <word_data>
         <word>implore</word>
         <links>http://www.nytimes.com/2016/08/11/books/review-in-hillbilly-elegy-a-compassionate-analysis-of-the-poor-who-love-trump.html</links>
-        <meaning>beg</meaning>
+        <links>http://www.usnews.com/news/politics/articles/2016-09-17/the-latest-sanders-urges-turned-off-voters-to-turn-out</links>
+        <meaning>beg; beg</meaning>
         <got_right>0</got_right>
         <total_quiz>0</total_quiz>
         <learned>false</learned>
@@ -517,6 +519,126 @@
         <word>revere</word>
         <links>http://www.nytimes.com/2016/08/11/books/review-in-hillbilly-elegy-a-compassionate-analysis-of-the-poor-who-love-trump.html</links>
         <meaning>admire</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>solipism</word>
+        <links>https://www.washingtonpost.com/opinions/donald-trump-and-the-fitness-threshold/2016/08/04/b06bae34-5a69-11e6-831d-0324760ca856_story.html?utm_term=.76a437a56016</links>
+        <meaning>the view or theory that the self is all that can be known to exist</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>aggrandize</word>
+        <links>https://www.washingtonpost.com/opinions/donald-trump-and-the-fitness-threshold/2016/08/04/b06bae34-5a69-11e6-831d-0324760ca856_story.html?utm_term=.76a437a56016</links>
+        <meaning>enhance the reputation of (someone) beyond what is justified by facts</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>emphatically</word>
+        <links>https://www.washingtonpost.com/opinions/donald-trump-and-the-fitness-threshold/2016/08/04/b06bae34-5a69-11e6-831d-0324760ca856_story.html?utm_term=.76a437a56016</links>
+        <meaning>clearly</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>tepid</word>
+        <links>https://www.washingtonpost.com/opinions/donald-trump-and-the-fitness-threshold/2016/08/04/b06bae34-5a69-11e6-831d-0324760ca856_story.html?utm_term=.76a437a56016</links>
+        <meaning>lukewarm</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>status quo</word>
+        <links>https://www.washingtonpost.com/opinions/donald-trump-and-the-fitness-threshold/2016/08/04/b06bae34-5a69-11e6-831d-0324760ca856_story.html?utm_term=.76a437a56016</links>
+        <meaning>current state of things</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>contingent</word>
+        <links>http://www.usnews.com/news/politics/articles/2016-09-17/the-latest-sanders-urges-turned-off-voters-to-turn-out</links>
+        <meaning>1. group; 2. subject to chance</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>somnolent</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>sleepy</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>entropy</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>deteriotion</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>morass</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>confusion</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>anemic</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>weak</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>fraying</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>strain</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>insidious</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>trecherous</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>coterminous</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>having same boundaries or extant in space, time or meaning</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>enervation</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>exhaustion</meaning>
+        <got_right>0</got_right>
+        <total_quiz>0</total_quiz>
+        <learned>false</learned>
+    </word_data>
+    <word_data>
+        <word>quandary</word>
+        <links>https://www.washingtonpost.com/opinions/book-review-losing-our-way-an-portrait-of-america-by-bob-herbert/2014/10/31/01df1982-47f1-11e4-891d-713f052086a0_story.html?utm_term=.446347b14be5</links>
+        <meaning>difficult situation; predicament; plight; </meaning>
         <got_right>0</got_right>
         <total_quiz>0</total_quiz>
         <learned>false</learned>
